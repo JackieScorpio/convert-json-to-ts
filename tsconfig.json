@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "ES2020",
+		"outDir": "out",
+		"lib": [
+			"ES2020",
+			"DOM",
+			"DOM.Iterable"
+		],
+		"sourceMap": true,
+		"rootDir": "src",
+		"strict": true,
+		"jsx": "react-jsx", // react18 用 react-jsx，18之前的版本用 react
+		"esModuleInterop": true,
+	},
+	"exclude": ["src/test"]
+}
