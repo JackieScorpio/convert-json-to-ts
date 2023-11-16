@@ -1,0 +1,83 @@
+{
+  "name": "convertjson",
+  "displayName": "convertjson",
+  "description": "",
+  "version": "0.0.1",
+  "repository": {},
+  "publisher": "Yue",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "convertjson",
+          "title": "Convertjson",
+          "icon": "icon/convert.svg"
+        }
+      ]
+    },
+    "views": {
+      "convertjson": [
+        {
+          "id": "convertjson.convert",
+          "name": "Convert"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "convertjson.convert",
+        "contents": "[Convert](command:convertjson.showPanel)"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "dev": "webpack serve -c webpack.dev.js",
+    "build": "webpack -c webpack.prod.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.2",
+    "@codemirror/lang-json": "^6.0.1",
+    "@types/mocha": "^10.0.2",
+    "@types/node": "18.x",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/vscode": "^1.84.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "@uiw/codemirror-themes": "^4.21.20",
+    "@uiw/react-codemirror": "^4.21.20",
+    "@vscode/test-electron": "^2.3.4",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.50.0",
+    "glob": "^10.3.3",
+    "html-webpack-plugin": "^5.5.3",
+    "mocha": "^10.2.0",
+    "style-loader": "^3.3.3",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
