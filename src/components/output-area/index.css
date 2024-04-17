@@ -1,0 +1,12 @@
+.output-area-wrapper {
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #939292;
+    resize: none;
+}
+
+.output-area-wrapper:focus {
+    border: 1px solid #939292;
+    outline: none !important;
+    box-shadow: none;
+}

@@ -5,8 +5,9 @@ export default function (str = "") {
             (str[0] === "{" && str.slice(-1) === "}") ||
             (str[0] === "[" && str.slice(-1) === "]")
         )
-    )
-        return "";
+    ) {
+        return "{}";
+    }
 
     const SYMBOLS = {
         LEFT_BRACE: "&#40;",

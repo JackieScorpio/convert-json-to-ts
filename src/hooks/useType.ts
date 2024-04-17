@@ -1,5 +1,5 @@
 import parse from 'json5/lib/parse';
-// import prettier from 'prettier/standalone';
+import prettier from 'prettier/standalone';
 // import typescriptParser from 'prettier/parser-typescript';
 
 type KV = Record<string | number | symbol, unknown>;
@@ -79,13 +79,12 @@ export default function (jsonString: string, space = " ") {
             }
         }
     }
-
-    const typeString = typeArray.join('');
+    
+    const typeString = typeArray.join('\n');
 
     return typeString;
-    // return prettier.format(typeString, { parser: 'typescript',plugins:[typescriptParser] });
+    // return prettier.format(typeString, { parser: 'typescript' });
 }
-
 
 function isObject(node: unknown): node is KV {
     return '[object Object]' === Object.prototype.toString.call(node);
@@ -94,6 +93,7 @@ function isObject(node: unknown): node is KV {
 function isArray(node: unknown): node is unknown[] {
     return '[object Array]' === Object.prototype.toString.call(node);
 }
+
 
 export function isSameScheme(input1: unknown, input2: unknown) {
     const type = [getType(input1), getType(input2)];

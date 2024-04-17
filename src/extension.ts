@@ -14,10 +14,13 @@ export function activate(context: vscode.ExtensionContext) {
 				enableScripts: true, // 运行 JS 执行
 			}
 		)
+
+		panel.webview.onDidReceiveMessage((e) => {
+			vscode.window.showWarningMessage(e.message);
+		});
 			
 		const isProduction = context.extensionMode === vscode.ExtensionMode.Production;
 		let srcUrl = '';
-		
 		if (isProduction) {
 		  const filePath = vscode.Uri.file(
 			path.join(context.extensionPath, 'dist', 'static/js/main.js')
@@ -48,6 +51,10 @@ function getWebviewContent(srcUri: string) {
 			</head>
 			<body>
 				<div id="root"></div>
+				<script>
+					// 定义该变量，允许react和vscode通信
+					const vscode = acquireVsCodeApi();
+				</script>
 			</body>
 		</html>
 	`;
