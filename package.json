@@ -2,13 +2,16 @@
   "name": "convertjson",
   "displayName": "convertjson",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "yue-zong",
   "repository": {
     "type": "git",
     "url": "https://github.com/JackieScorpio/convert-json-to-ts.git"
   },
-  "keywords": ["convert json to js", "webview"],
+  "keywords": [
+    "convert json to js",
+    "webview"
+  ],
   "engines": {
     "vscode": "^1.84.0"
   },
