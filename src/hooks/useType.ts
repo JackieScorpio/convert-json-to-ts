@@ -1,5 +1,5 @@
 import parse from 'json5/lib/parse';
-import prettier from 'prettier/standalone';
+// import prettier from 'prettier/standalone';
 // import typescriptParser from 'prettier/parser-typescript';
 
 type KV = Record<string | number | symbol, unknown>;
